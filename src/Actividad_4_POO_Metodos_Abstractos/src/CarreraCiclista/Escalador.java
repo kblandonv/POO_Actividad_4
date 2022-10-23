@@ -1,4 +1,4 @@
-package CarreraCiclista;
+package Actividad_4_POO_Metodos_Abstractos.src.CarreraCiclista;
 
 /**
  * Esta clase denominada Escalador es un tipo de Ciclista que se

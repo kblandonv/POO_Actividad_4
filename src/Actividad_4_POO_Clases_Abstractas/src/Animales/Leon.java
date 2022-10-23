@@ -1,4 +1,4 @@
-package Animales;
+package Actividad_4_POO_Clases_Abstractas.src.Animales;
 
 /**
  * Esta clase concreta denominada León es una subclase de Felino.

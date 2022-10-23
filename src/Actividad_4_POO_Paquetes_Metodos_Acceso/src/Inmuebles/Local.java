@@ -1,4 +1,4 @@
-package Inmuebles;
+package Actividad_4_POO_Paquetes_Metodos_Acceso.src.Inmuebles;
 
 /**
  * Esta clase denominada Local modela un tipo específico de inmueble

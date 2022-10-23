@@ -16,7 +16,7 @@ public class ListaPersonas {
     
     public void eliminarPersona(int i) {
     DefaultListModel modelo= new DefaultListModel();
-    modelo.removeElementAt(i);
+    listaPersonas.removeElementAt(i);
     }
     
     public void borrarLista() {

@@ -1,3 +1,5 @@
+package Actividad_4_POO.src;
+
 
     /**
      * Esta clase denominada CuentaAhorros modela una cuenta de ahorros
@@ -6,7 +8,8 @@
     public class CuentaAhorros extends Cuenta {
         /* Atributo que identifica si una cuenta está activa; lo está si su saldo
         es superior a 10000 */
-        private boolean activa;
+        private boolean activa=true;
+        
 
         /**
          * Constructor de la clase CuentaAhorros
@@ -17,10 +20,27 @@
          */
         public CuentaAhorros(float saldo, float tasa) {
             super(saldo, tasa);
-            if (saldo < 10000) /* Si el saldo es menor a 10000, la cuenta no se activa */
+            if (saldo>=0 && saldo < 10000) /* Si el saldo es menor a 10000, la cuenta no se activa */
                 activa = false;
             else
                 activa = true;
+        }
+        
+        public float getSaldo(){
+            return saldo;
+        }
+        
+        public float getTasa(){
+            
+            return tasa;
+        }
+        
+        public float calcularTasa(){
+            float valort,porc,tasad,tasay;
+            porc=(getTasa()/100)/360;
+            tasad=porc*saldo;
+            tasay=tasad*360;
+            return tasay;
         }
 
         /**
@@ -72,5 +92,13 @@
             System.out.println("Número de transacciones = " +
                     (numeroConsignaciones + numeroRetiros));
             System.out.println();
+        }
+        
+        public void saldoInicialAhorros(){
+            System.out.println(getSaldo());
+        }
+        
+        public void tasaAhorros(){
+            System.out.println(getTasa());
         }
     }

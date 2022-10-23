@@ -1,4 +1,4 @@
-package Animales;
+package Actividad_4_POO_Clases_Abstractas.src.Animales;
 
 /**
  * Esta clase abstracta denominada Felino modela esta familia de

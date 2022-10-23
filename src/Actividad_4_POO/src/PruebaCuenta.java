@@ -1,3 +1,5 @@
+package Actividad_4_POO.src;
+
 import java.util.Scanner;
 
 /**
@@ -11,20 +13,48 @@ public class PruebaCuenta {
      * consignación y un retiro, y luego se le genera el extracto mensual
      */
     public static void main(String[] args) {
+        Cuenta c=new Cuenta();
+        float saldo,tasa;
+        String tipoc;
         Scanner input = new Scanner(System.in);
-        System.out.println("Cuenta de ahorros");
-        System.out.println("Ingrese saldo inicial = $");
-        float saldoInicialAhorros = input.nextFloat();
-        System.out.print("Ingrese tasa de interés = ");
-        float tasaAhorros = input.nextFloat();
-        CuentaAhorros cuenta1 = new CuentaAhorros(saldoInicialAhorros, tasaAhorros);
-        System.out.print("Ingresar cantidad a consignar:$");
-        float cantidadDepositar = input.nextFloat();
-        cuenta1.consignar(cantidadDepositar);
-        System.out.print("Ingresar cantidad a retirar:$");
-        float cantidadRetirar = input.nextFloat();
-        cuenta1.retirar(cantidadRetirar);
-        cuenta1.extractoMensual();
-        cuenta1.imprimir();
+        System.out.println("Ingrese el tipo de cuenta");
+        System.out.println("1- Cuenta de ahorros");
+        System.out.println("2- Cuenta corriente");
+        tipoc=input.next();
+        if (c.verificarCuentaAhorros(tipoc)==true){
+            System.out.println("Ingrese saldo inicial = $");
+            saldo=input.nextFloat();
+            System.out.print("Ingrese tasa de interés = ");
+            tasa=input.nextFloat();
+            CuentaAhorros ch=new CuentaAhorros(saldo,tasa);
+            System.out.println("Saldo "+ch.getSaldo());
+            System.out.println("Tasa "+ch.calcularTasa());
+            
+            System.out.print("Ingresar cantidad a consignar:$");
+            float cantidadDepositar = input.nextFloat();
+            ch.consignar(cantidadDepositar);
+            System.out.print("Ingresar cantidad a retirar:$");
+            float cantidadRetirar = input.nextFloat();
+            ch.retirar(cantidadRetirar);
+            ch.extractoMensual();
+            ch.imprimir();
+        }
+        else if(c.verificarCuentaCorriente(tipoc)){
+            System.out.println("Cuenta Corriente");
+            float sobregiro=0;
+            float tasa1=0;
+            CuentaCorriente cc=new CuentaCorriente(sobregiro,tasa1);
+            System.out.println("Saldo "+cc.getSaldo());
+            System.out.println("Tasa "+cc.calcularTasa());
+            
+            System.out.print("Ingresar cantidad a consignar:$");
+            float cantidadDepositar = input.nextFloat();
+            cc.consignar(cantidadDepositar);
+            System.out.print("Ingresar cantidad a retirar:$");
+            float cantidadRetirar = input.nextFloat();
+            cc.retirar(cantidadRetirar);
+            cc.extractoMensual();
+            cc.imprimir();
+        }      
     }
 }

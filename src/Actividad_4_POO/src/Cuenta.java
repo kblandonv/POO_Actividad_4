@@ -1,3 +1,5 @@
+package Actividad_4_POO.src;
+
 public class Cuenta {
     /**
      * Esta clase denominada Cuenta modela una cuenta bancaria con los
@@ -7,6 +9,7 @@ public class Cuenta {
 
     /** Atributo que define el sueldo de una cuenta bancaria */
     protected float saldo;
+    protected float tasa;
 
     /** Atributo que define el número de consignaciones realizadas en
     una cuenta bancaria */
@@ -25,9 +28,13 @@ public class Cuenta {
      * @param tasaAnual Parámetro que define la tasa anual de interés de
      * la cuenta
      */
-    public Cuenta(float saldo, float tasaAnual) {
+    public Cuenta(float saldo,float tasaAnual) {
         this.saldo = saldo;
         this.tasaAnual = tasaAnual;
+    }
+    
+    public Cuenta(){
+        
     }
     /**
      * Método que recibe una cantidad de dinero a consignar y actualiza
@@ -73,5 +80,30 @@ public class Cuenta {
     public void extractoMensual() {
         saldo -= comisionMensual;
         calcularInteres();
+    }
+    
+    public boolean verificarCuentaAhorros(String cuenta){
+        boolean activa=false;
+        
+        if(cuenta.equals("1")){  //ahorros
+              activa=true;
+        }
+        else{
+            System.out.println("Ingrese una opción válida");
+        }
+        return activa;
+    }
+    
+    public boolean verificarCuentaCorriente(String cuenta){
+        float sobregiro=0;
+        boolean activa=false;
+        
+        if(cuenta.equals("2")){
+            activa=true;
+        }
+        else{
+           System.out.println("Ingrese una opción válida"); 
+        }
+        return activa;
     }
 }

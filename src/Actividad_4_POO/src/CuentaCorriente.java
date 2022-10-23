@@ -1,3 +1,5 @@
+package Actividad_4_POO.src;
+
 /**
  * Esta clase denominada CuentaCorriente modela una cuenta bancaria
  * que es una subclase de Cuenta. Tiene un nuevo atributo: sobregiro.
@@ -18,6 +20,23 @@ public class CuentaCorriente extends Cuenta {
     public CuentaCorriente(float saldo, float tasa) {
         super(saldo, tasa); // Invoca al constructor de la clase padre
         sobregiro = 0; // Inicialmente no hay sobregiro
+    }
+    
+    public float getSaldo() {
+        return saldo;
+    }
+
+    public float getTasa() {
+
+        return tasa;
+    }
+
+    public float calcularTasa() {
+        float valort, porc, tasad, tasay;
+        porc = (getTasa() / 100) / 360;
+        tasad = porc * saldo;
+        tasay = tasad * 360;
+        return tasay;
     }
 
     /**

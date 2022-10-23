@@ -1,4 +1,4 @@
-package Animales;
+package Actividad_4_POO_Clases_Abstractas.src.Animales;
 
 /**
  * Método que devuelve un String con el hábitat de un perro

@@ -1,4 +1,4 @@
-package CarreraCiclista;
+package Actividad_4_POO_Metodos_Abstractos.src.CarreraCiclista;
 
 public class Contrarrelojista extends Ciclista{
     // Atributo que define la velocidad máxima de un contrarrelojista
